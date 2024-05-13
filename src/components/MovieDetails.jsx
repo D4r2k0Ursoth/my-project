@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-function MovieDetail({ movie }) {
+function MovieDetail({ movie, img1, img2}) {
     const [isPlaying, setIsPlaying] = useState(false);
     const trailerUrl = movie.trailerUrl; // Debes obtener la URL del trailer de tu API
 
     const handlePlayButtonClick = () => {
         setIsPlaying(true);
-        // Aquí podrías abrir un modal o una ventana emergente para reproducir el video
-        // También podrías utilizar una librería de reproductores de video como react-player
-        // Para simplificar, mostraré un mensaje en la consola cuando se presione el botón Play
+        // Aquí abrir un modal o una ventana emergente para reproducir el video
+        // librería de reproductores de video como react-player
+        
         console.log('Reproducir video...');
     };
 
@@ -22,13 +22,11 @@ function MovieDetail({ movie }) {
             <h2 className="text-3xl font-bold mb-4">{movie.title}</h2>
             <div className='mt-10 flex'>
                 <div className='pr-4'>
-                    <button onClick={handlePlayButtonClick} className="flex font-bold text-xl bg-white text-black px-16 py-5 rounded"><svg className='mt- ' width="20" height="20" viewBox="0 0 358 369" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 369V0L358 205L0 369Z" fill="black" />
-                    </svg>Play</button>
+                    <button onClick={handlePlayButtonClick} className="flex font-bold text-xl bg-white text-black px-16 py-5 rounded"><img className='mr-5' src={`${img2}`} alt='event' /><span>Play</span></button>
                 </div>
-                <div>
-                    <button className="bg-black px-20 py-5 rounded">
-                        <span className="text-lg font-bold text-white"> More Info</span>
+                <div >
+                    <button className="bg-black px-16 py-5 rounded">
+                        <span className="flex text-lg font-bold text-white"><img className='mr-4'  src={`${img1}`} alt='event' /> More Info</span>
                     </button>
                 </div>
             </div>

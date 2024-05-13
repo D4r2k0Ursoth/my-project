@@ -33,7 +33,7 @@ function App() {
             <div className="min-h-screen bg-gray-800 text-white">
                 <MoviesBg selectedMovie={selectedMovie} />
                 <MovieList movieList={movieList} onMovieSelect={handleMovieSelect} />
-                {selectedMovie && <MovieDetail movie={selectedMovie} />}
+                {selectedMovie && <MovieDetail img1=" ./src/assets/exclamation.svg" img2=" ./src/assets/play.svg" movie={selectedMovie} />}
             </div>
         </div>
     );
