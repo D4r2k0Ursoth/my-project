@@ -34,8 +34,8 @@ function App() {
                 <MoviesBg selectedMovie={selectedMovie} />
                 <MovieList movieList={movieList} onMovieSelect={handleMovieSelect} />
                 {selectedMovie && <MovieDetail 
-                text1="TRAILER" text2="WATCH" text3="Play" text4=" More Info"
-                img1=" ./src/assets/exclamation.svg" img2=" ./src/assets/play.svg" movie={selectedMovie} />}
+                text3="Play" text4=" More Info"
+                img1=" ./src/assets/exclamation.svg" img2=" ./src/assets/play.svg"  img3="./src/assets/logoIcon.svg"  movie={selectedMovie} />}
             </div>
         </div>
     );

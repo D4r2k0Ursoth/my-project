@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function MovieDetail({ movie, img1, img2, text1,text2,text3,text4}) {
+function MovieDetail({ movie, img1, img2,img3,text3,text4}) {
     const [isPlaying, setIsPlaying] = useState(false);
     const trailerUrl = movie.trailerUrl; // Debes obtener la URL del trailer de tu API
 
@@ -14,9 +14,8 @@ function MovieDetail({ movie, img1, img2, text1,text2,text3,text4}) {
 
     return (
         <div className=" relative p-7">
-            <div className='select-none text-red-600'>
-                <span className='font-sans font-bold text-2xl grid text-balance'> {text1} </span>
-                <span className='ml-2 font-sans font-normal text-2xl'>{text2}</span>
+            <div>
+                <img className='mr-2'src={`${img3}`} alt='event' />
             </div>
             <section className='mt-8'>
             <h2 className="select-none text-3xl font-bold mb-4">{movie.title}</h2>
@@ -32,7 +31,7 @@ function MovieDetail({ movie, img1, img2, text1,text2,text3,text4}) {
             </div>
             <section>
             <div className='mt-4 w-[40%] '>
-                <p className="select-none text-xs font-ligth text-balance overflow-hidden line-clamp-3">{movie.overview}</p>
+                <p className="select-none text-ls font-ligth text-balance overflow-hidden line-clamp-3">{movie.overview}</p>
             </div>
             </section>
             </section>
