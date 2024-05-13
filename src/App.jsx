@@ -30,10 +30,12 @@ function App() {
 
     return (
         <div>
-            <div className="min-h-screen bg-gray-800 text-white">
+            <div className="center min-h-screen bg-gray-800 text-white">
                 <MoviesBg selectedMovie={selectedMovie} />
                 <MovieList movieList={movieList} onMovieSelect={handleMovieSelect} />
-                {selectedMovie && <MovieDetail img1=" ./src/assets/exclamation.svg" img2=" ./src/assets/play.svg" movie={selectedMovie} />}
+                {selectedMovie && <MovieDetail 
+                text1="TRAILER" text2="WATCH" text3="Play" text4=" More Info"
+                img1=" ./src/assets/exclamation.svg" img2=" ./src/assets/play.svg" movie={selectedMovie} />}
             </div>
         </div>
     );

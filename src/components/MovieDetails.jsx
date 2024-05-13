@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function MovieDetail({ movie, img1, img2}) {
+function MovieDetail({ movie, img1, img2, text1,text2,text3,text4}) {
     const [isPlaying, setIsPlaying] = useState(false);
     const trailerUrl = movie.trailerUrl; // Debes obtener la URL del trailer de tu API
 
@@ -13,26 +13,26 @@ function MovieDetail({ movie, img1, img2}) {
     };
 
     return (
-        <div className=" relative p-8">
-            <div className='text-red-600'>
-                <span className='font-sans font-bold text-4xl grid text-balance'>TRAILER</span>
-                <span className='font-sans font-normal text-4xl'>WATCH</span>
+        <div className=" relative p-7">
+            <div className='select-none text-red-600'>
+                <span className='font-sans font-bold text-2xl grid text-balance'> {text1} </span>
+                <span className='ml-2 font-sans font-normal text-2xl'>{text2}</span>
             </div>
-            <section className='mt-10'>
-            <h2 className="text-3xl font-bold mb-4">{movie.title}</h2>
-            <div className='mt-10 flex'>
-                <div className='pr-4'>
-                    <button onClick={handlePlayButtonClick} className="flex font-bold text-xl bg-white text-black px-16 py-5 rounded"><img className='mr-5' src={`${img2}`} alt='event' /><span>Play</span></button>
-                </div>
+            <section className='mt-8'>
+            <h2 className="select-none text-3xl font-bold mb-4">{movie.title}</h2>
+            <div className='flex'>
+                <div className='flex select-none'>
+                    <button onClick={handlePlayButtonClick} className="flex font-extrabold text-sm bg-white text-black px-5 py-2.5 rounded"><img className='mr-2 mt-1' src={`${img2}`} alt='event' /><span>{text3}</span></button>
                 <div >
-                    <button className="bg-black px-16 py-5 rounded">
-                        <span className="flex text-lg font-bold text-white"><img className='mr-4'  src={`${img1}`} alt='event' /> More Info</span>
-                    </button>
+                    <button className="ml-2 bg-black px-6 py-2.5 rounded">
+                        <div className='flex container'><span className="flex text-nowrap text-sm font-bold text-white"><img className='mr-2'src={`${img1}`} alt='event' />{text4}</span></div>
+                   </button>
+                </div>
                 </div>
             </div>
             <section>
-            <div className='mt-10 w-[30%] '>
-                <p className=" text-sm font-sans text-balance overflow-hidden line-clamp-3">{movie.overview}</p>
+            <div className='mt-4 w-[40%] '>
+                <p className="select-none text-xs font-ligth text-balance overflow-hidden line-clamp-3">{movie.overview}</p>
             </div>
             </section>
             </section>

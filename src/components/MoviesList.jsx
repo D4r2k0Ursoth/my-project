@@ -51,25 +51,27 @@ function MovieList({ onMovieSelect }) {
             }
         ]
     };
-
     const handleMovieClick = (movie) => {
         onMovieSelect(movie);
     };
-
     return (
         <div className="absolute bottom-0 left-0 right-0">
-            <h1 className="ml-4 font-bold">New releases</h1>
-            <div className="overflow-hidden pr-0">
-                <Slider {...settings}>
-                    {movieList.map((movie) => (
-                        <div key={movie.id} className="m-4 cursor-pointer transform transition-transform hover:scale-105" onClick={() => handleMovieClick(movie)}>
-                            <div className="relative bg-cover bg-center bg-no-repeat rounded w-40 h-40" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})` }}></div>
-                        </div>
-                    ))}
-                </Slider>
+            <div className="overflow-hidden">
+                <div><h2 className="select-none ml-8 font-sans text-xl font-bold">New Releases</h2></div>
+                <section>
+                    <Slider {...settings}>
+                        {movieList.map((movie) => (
+                            <div key={movie.id} className="m-2 transition-transform hover:scale-105" onClick={() => handleMovieClick(movie)}>
+                                <div className="relative bg-cover bg-center bg-no-repeat rounded w-[96%] h-40" style={{ 
+                                    backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
+                                    backgroundSize: 'cover', // Agregar esta línea para mantener la relación de aspecto y calidad de la imagen
+                                }}></div>
+                            </div>
+                        ))}
+                    </Slider>
+                </section>
             </div>
         </div>
     );
 }
-
 export default MovieList;
