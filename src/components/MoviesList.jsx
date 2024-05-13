@@ -61,8 +61,8 @@ function MovieList({ onMovieSelect }) {
                 <section>
                     <Slider {...settings}>
                         {movieList.map((movie) => (
-                            <div key={movie.id} className="m-2 transition-transform hover:scale-105" onClick={() => handleMovieClick(movie)}>
-                                <div className="relative bg-cover bg-center bg-no-repeat rounded w-[96%] h-40" style={{ 
+                            <div key={movie.id} className='m-2 transition-transform hover:scale-105' onClick={() => handleMovieClick(movie)}>
+                                <div className='relative bg-cover bg-center bg-no-repeat rounded w-[96%] h-40' style={{ 
                                     backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
                                     backgroundSize: 'cover', // Agregar esta línea para mantener la relación de aspecto y calidad de la imagen
                                 }}></div>
